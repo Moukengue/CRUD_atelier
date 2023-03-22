@@ -4,46 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>PDO - Ajout</title>
 </head>
 <body>
 
 <h1>Ajouter un Vinyle</h1>
 
-    <a href="disc.php"><button>Retour à la liste des discs</button></a>
+    
 
     <br>
     <br>
 <div class="container">
-    <form action ="script_disc_ajout.php" method="post">
-
-        <label for="nom_for_label">Title :</label><br>
-        <input type="text" name="title " placeholder="Enter title">
-
+    <form action ="script_disc_ajout.php" method="post" enctype="multipart/form-data">
+      <div class="row">
+      <div class="col">
+        <label for="title">Title</label><br>
+        <input type="text" class="form-control" id="title" placeholder="Enter title" name="title">
+        </div>
+        <br><br>
+        
+        <label for="artist">artist</label><br>
+        <input type="text"class="form-control" placeholder="Enter artist" name="artist"> 
         <br><br>
 
-        <label for="url_for_label">Year :</label><br>
-        <input type="text" name="artist"placeholder="Enter artist">
+        <label for="year">Year</label><br>
+        <input type="text" class="form-control" placeholder="Enter year" name="year"> 
         <br><br>
 
-        <label for="url_for_label">Year :</label><br>
-        <input type="text" name="year"placeholder="Enter year">
+        <label for="genre">Genre </label><br>
+        <input type="text" class="form-control" placeholder="Enter genre" name="genre">
         <br><br>
 
-        <Genre for="url_for_label">Genre :</Genre><br>
-        <input type="text" name="artist"placeholder="Enter genre">
+        <label for="label">Label </label><br>
+        <input type="text"class="form-control" placeholder="Enter label" name="label"> 
         <br><br>
+        <label for="price">price</label><br>
+        <input type="text" class="form-control" placeholder="Enter price" name="price">
+        <br><br>
+        
 
-        <label for="url_for_label">Label:</label><br>
-        <input type="text" name="label"placeholder="Enter label">
-        <br><br>
-        <label for="url_for_label">price :</label><br>
-        <input type="text" name="price"placeholder="Enter price">
-        <br><br>
-      
-        <input type="submit" value="Ajouter">
+   </div>
+        </div>
+    
+    <input type="submit" class="btn btn-primary"value="Ajouter">
+    <input type="submit" class="btn btn-primary"value="Retour">
 
     </form>
+    
     </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <?php
  include "db.php"; // inclut la connexion a la base de 
  $db = connexionBase();
- $requete = $db->query("SELECT * FROM  disc inner join  artist on artist.artist_id=disc.artist_id");
+ $requete = $db->query("SELECT * FROM  disc inner join  artist on artist.artist_id=disc.artist_id ORDER BY disc_id");
  $artists = $requete->fetchAll(PDO::FETCH_OBJ);
  $requete->closeCursor();
 
@@ -19,8 +19,9 @@
  </head>
  <body>
     <h1>Liste des disques (15)</h1><br>
+
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-  <button class="btn btn-primary me-md-2" type="button">Ajouter</button>
+    <a class="btn btn-primary" href="disc_new.php?id=" role="button">Ajouter</a>
 </div>
     <div class="container">
  <div class= "row">
@@ -36,7 +37,9 @@
             <p>Label:<?=$artist->disc_label ?></p>
             <p>Year:<?=$artist->disc_year ?></p>
             <p>Genre:<?=$artist->disc_genre ?></p>
-            <td><a href="disc_detail.php?id=<?= $artist->artist_id ?>">Détail</a></td>
+            <a href="disc_detail.php?id=<?= $artist->artist_id ?>"class="btn btn-primary">Détail</a>
+            
+            
      </td>
     </tr>
         
